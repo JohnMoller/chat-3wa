@@ -17,7 +17,7 @@ function __autoload($className)
 	require('models/'.$className.'.class.php');
 }
 
-$access = array('home', 'user');
+$access = array('home', 'user', 'login', 'register');
 
 if (isset($_GET['page']))
 {
@@ -26,7 +26,7 @@ if (isset($_GET['page']))
 		$page = $_GET['page'];
 }
 
-$access_traitement = array('user'=>'user','home'=>'message');
+$access_traitement = array('user'=>'user','home'=>'message','login'=>'user','register'=>'user');
 
 if (isset($access_traitement[$page]))
 	require('apps/traitement_'.$access_traitement[$page].'.php');
