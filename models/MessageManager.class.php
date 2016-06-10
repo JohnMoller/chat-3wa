@@ -18,7 +18,6 @@ class MessageManager
 		return $list;
 	}
 
-	
 
 
 	public function create($data)

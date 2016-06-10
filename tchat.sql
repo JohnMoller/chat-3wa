@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Ven 10 Juin 2016 à 09:56
+-- Généré le: Ven 10 Juin 2016 à 10:34
 -- Version du serveur: 5.5.47-0ubuntu0.14.04.1
 -- Version de PHP: 5.5.9-1ubuntu4.14
 
@@ -29,6 +29,7 @@ SET time_zone = "+00:00";
 CREATE TABLE IF NOT EXISTS `message` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `contenu` varchar(2047) NOT NULL,
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `id_user` int(11) unsigned NOT NULL,
   PRIMARY KEY (`id`),
   KEY `id_user` (`id_user`)
