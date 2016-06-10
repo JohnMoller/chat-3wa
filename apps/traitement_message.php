@@ -1,5 +1,5 @@
 <?php
-if ($_SESSION['id'])
+if (isset($_SESSION['id']))
 {
 	if  (isset($_POST['action']) && ($_POST['action'] == 'create'))
 	{

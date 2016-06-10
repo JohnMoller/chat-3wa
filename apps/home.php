@@ -1,21 +1,8 @@
 <?php
-require('views/form_message.phtml');
-$manager = new MessageManager($link);
+require('views/home.phtml')
 
-$messages = $manager->findAll();
-if (!$messages)
-	require('views/home_vide.phtml');
-else
-{
-	$count = 0;
-	$max = sizeof($messages);
-	while ($count < $max)
-	{
-		$message = $messages[$count];
-		$user = $message->getUser($message->getIdUser());
-		require('views/home.phtml');
 
-		$count++;
-	}
-}
 ?>
+
+
+

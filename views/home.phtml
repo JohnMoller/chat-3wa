@@ -1,1 +1,4 @@
-<p><?=$message->getDate()?> <strong><?=$user->getLogin()?> :</strong> <?=$message->getContenu()?></p>
+<?php require('apps/form_message.php'); ?>
+<div id="liste_messages">
+<?php require('apps/liste_messages.php'); ?>
+</div>

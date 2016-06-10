@@ -7,7 +7,7 @@ if (isset($_POST['action']))
 		try
 		{
 			$user = $manager->create($_POST);
-			header('Location: index.php');
+			header('Location: index.php?page=login');
 			exit;
 		}
 		catch (Exception $exception)
@@ -22,7 +22,7 @@ if (isset($_POST['action']))
 		try
 		{
 			$user = $manager->login($_POST);
-			header('Location: index.php');
+			header('Location: index.php?page=home');
 			exit;
 		}
 		catch (Exception $exception)
@@ -37,7 +37,7 @@ if (isset($_GET['action']))
 	if ($_GET['action'] == 'logout')
 	{
 		session_destroy();
-		header('Location: index.php');
+		header('Location: index.php?page=login');
 		exit;
 	}
 }

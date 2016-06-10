@@ -26,14 +26,14 @@ if (isset($_GET['page']))
 		$page = $_GET['page'];
 }
 
-$access_traitement = array('user'=>'user','home'=>'message','login'=>'user','register'=>'user');
+$access_traitement = array('user'=>'user', 'home'=>'message','login'=>'user','register'=>'user');
 
 if (isset($access_traitement[$page]))
 	require('apps/traitement_'.$access_traitement[$page].'.php');
 
 if (isset($_GET['ajax']))
 {
-	$accessAjax = [''];
+	$accessAjax = ['liste_messages'];
 	if (isset($_GET['page']))
 	{
 		if (in_array($_GET['page'], $accessAjax))
