@@ -2,13 +2,18 @@
 $manager = new MessageManager($link);
 
 $messages = $manager->findAll();
-$count = 0;
-$max = sizeof($messages);
-while ($count < $max)
+if (!$messages)
+	require('views/home_vide.phtml');
+else
 {
-	$message = $messages[$count];
-	require('views/home.phtml');
+	$count = 0;
+	$max = sizeof($messages);
+	while ($count < $max)
+	{
+		$message = $messages[$count];
+		require('views/home.phtml');
 
-	$count++;
+		$count++;
+	}
 }
 ?>

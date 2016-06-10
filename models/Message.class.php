@@ -16,16 +16,16 @@ class Message
 		return $this->id;
 	}
 
-	public function getContenu();
+	public function getContenu()
 	{
 		return $this->contenu;
 	}
-	public function getDate();
+	public function getDate()
 	{
 		return $this->date;
 	}
 
-	public function getIdUser();
+	public function getIdUser()
 	{
 		return $this->id_user;
 	}
