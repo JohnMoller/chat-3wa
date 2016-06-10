@@ -3,6 +3,7 @@ class Message
 {
 	private $id;
 	private $contenu;
+	private $date;
 	private $id_user;
 
 	public function __construct($link)
@@ -18,6 +19,10 @@ class Message
 	public function getContenu();
 	{
 		return $this->contenu;
+	}
+	public function getDate();
+	{
+		return $this->date;
 	}
 
 	public function getIdUser();
