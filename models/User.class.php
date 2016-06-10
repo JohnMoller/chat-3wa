@@ -25,6 +25,13 @@ class User
 		return $this->password;
 	}
 
+	public function verifyPassword($password)
+	{
+		if (password_verify($password, $this->password))
+			return true;
+		return false;
+	}
+
 	public function setLogin($login)
 	{
 		if (strlen($login) < 4)
