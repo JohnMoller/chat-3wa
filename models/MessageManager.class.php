@@ -13,8 +13,8 @@ class MessageManager
 		$list = [];
 		$request = "SELECT * FROM message ORDER BY id DESC";
 		$res = mysqli_query($this->link, $request);
-		while ($produit = mysqli_fetch_object($res, "Produit", [$this->link]))
-			$list[] = $produit;
+		while ($message = mysqli_fetch_object($res, "Message", [$this->link]))
+			$list[] = $message;
 		return $list;
 	}
 
