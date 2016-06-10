@@ -32,8 +32,8 @@ class Message
 
 	public function setContenu($contenu)
 	{
-		if (strlen($contenu) < 5)
-			throw new Exception("Contenu trop court (< 5)");
+		if (strlen($contenu) < 2)
+			throw new Exception("Contenu trop court (< 2)");
 		else if (strlen($contenu) > 2047)
 			throw new Exception("Contenu trop long (> 2047)");
 		return $this->contenu = $contenu;
