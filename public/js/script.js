@@ -3,9 +3,10 @@ $('document').ready(function()
 	$('form').submit(function(info)
 	{
 		info.preventDefault();
-		$.post('index.php?page=message', {message:""}, function()
+		var contenu = $("#contenu").val();
+		$.post('index.php?page=message', {"contenu":contenu,"action":"create"}, function()
 		{
-
+			$("#contenu").val("").focus();
 		});
 		return false;
 	});
