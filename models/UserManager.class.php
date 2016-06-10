@@ -21,8 +21,6 @@ class UserManager
 
 	public function verifVariables($data)
 	{
-	if (!isset($data['email']))
-		throw new Exception ("Missing paramater : email");
 	if (!isset($data['login']))
 		throw new Exception ("Missing paramater : login");
 	if (!isset($data['password1']))
@@ -31,14 +29,6 @@ class UserManager
 		throw new Exception ("Missing paramater : password2");
 	if ($data['password1'] != $data['password2'])
 		throw new Exception ("les passwords ne correspondent pas");
-	if (!isset($data['prenom']))
-		throw new Exception ("Missing paramater : prenom");
-	if (!isset($data['nom']))
-		throw new Exception ("Missing paramater : nom");
-	if (!isset($data['sexe']))
-		throw new Exception ("Missing paramater : sexe");
-	if (!isset($data['date_naissance']))
-		throw new Exception ("Missing paramater : date_naissance");
 	}
 
 	public function create($data)

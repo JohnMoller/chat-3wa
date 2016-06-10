@@ -1,1 +1,3 @@
-<p><?=$message->getDate()?> <strong><?=$user->getLogin()?> :</strong> <?=$message->getContenu()?></p>
+<p><?=htmlentities($message->getDate()); ?>
+<strong><?=htmlentities($user->getLogin()); ?> :</strong> 
+<?=htmlentities($message->getContenu()); ?></p>
