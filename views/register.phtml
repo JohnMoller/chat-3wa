@@ -6,18 +6,24 @@
 <div class="text-center" style="padding:50px 0">
 	<div class="logo">REGISTER</div>
 	<div class="login-form-1">
-		<form id="register-form" class="text-left">
+		<form id="register-form" class="text-left" method="POST">
 			<div class="login-form-main-message"></div>
 			<div class="main-login-form">
 				<div class="login-group">
 					<div class="form-group">
-						<label for="reg_username" class="sr-only">Username</label>
-						<input type="text" class="form-control" id="reg_username" name="reg_username" placeholder="username">
+						<label for="login" class="sr-only">login</label>
+						<input type="text" class="form-control" id="reg_username" name="login" placeholder="login">
 					</div>
 					<div class="form-group">
-						<label for="reg_password" class="sr-only">Password</label>
-						<input type="password" class="form-control" id="reg_password" name="reg_password" placeholder="password">
+						<label for="password1" class="sr-only">Password</label>
+						<input type="password" class="form-control" id="password1" name="password1" placeholder="password">
 					</div>
+						<div class="form-group">
+						<label for="password2" class="sr-only">Password</label>
+						<input type="password" class="form-control" id="password2" name="password2" placeholder="password">
+					</div>
+					<input type="hidden" name="action" value="create">
+					<input type="submit" value="VALIDER">
 				</div>
 			</div>
 		</form>
