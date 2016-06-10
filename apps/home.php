@@ -1,4 +1,5 @@
 <?php
+require('views/form_message.phtml');
 $manager = new MessageManager($link);
 
 $messages = $manager->findAll();

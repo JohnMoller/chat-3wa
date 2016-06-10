@@ -42,7 +42,7 @@ class Message
 	public function setIdUser()
 	{
 		$id_user = $_SESSION['id'];
-		return $this->id_user;
+		return $this->id_user = $id_user;
 	}
 }
 ?>

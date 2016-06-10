@@ -23,7 +23,7 @@ class MessageManager
 	public function create($data)
 	{
 		if (!isset($_SESSION['id']))
-			throw new Exception ("Vous devez être admin");
+			throw new Exception ("Vous devez être identifié");
 
 		if (!isset($data['contenu']))
 			throw new Exception ("Missing paramater : reference");
@@ -35,7 +35,7 @@ class MessageManager
 		
 
 		$contenu = mysqli_real_escape_string($this->link, $message->getContenu());
-		$id_user = $message->getIdUser();;
+		$id_user = $message->getIdUser();
 
 		$request = "INSERT INTO message (contenu, id_user) VALUES('".$contenu."','".$id_user."')";
 		$res = mysqli_query($this->link, $request);
