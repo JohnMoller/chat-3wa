@@ -12,6 +12,7 @@ else
 	while ($count < $max)
 	{
 		$message = $messages[$count];
+		$user = $message->getUser($message->getIdUser());
 		require('views/home.phtml');
 
 		$count++;

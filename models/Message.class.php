@@ -44,5 +44,15 @@ class Message
 		$id_user = $_SESSION['id'];
 		return $this->id_user = $id_user;
 	}
+
+	public function getUser($id)
+	{
+			$userManager = new UserManager($this->link);
+			$this->user = $userManager->findById($id);
+		return $this->user;
+	}
+
+
+
 }
 ?>
