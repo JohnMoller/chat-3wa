@@ -1,6 +1,6 @@
 $('document').ready(function()
 {
-	$('form').submit(function(info)
+	$('#createmessage').submit(function(info)
 	{
 		info.preventDefault();
 		var contenu = $("#contenu").val();
