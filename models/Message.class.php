@@ -5,6 +5,7 @@ class Message
 	private $contenu;
 	private $date;
 	private $id_user;
+	private $id_channel;
 
 	public function __construct($link)
 	{
@@ -26,6 +27,10 @@ class Message
 	}
 
 	public function getIdUser()
+	{
+		return $this->id_user;
+	}
+	public function getIdChannel()
 	{
 		return $this->id_user;
 	}

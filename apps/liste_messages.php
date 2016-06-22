@@ -1,11 +1,11 @@
 <?php
-if (isset($_GET['id']))
+if (isset($_GET['channel']))
 {
-	$id = $_GET['id'];
-	$manager = new CategoryManager($link);
-	$category = $manager->findById($id);
+	$id = $_GET['channel'];
+	$manager = new ChannelManager($link);
+	$channel = $manager->findById($id);
 
-	$messages = $category->getMessages();
+	$messages = $channel->getMessages();
 
 	$count = 0;
 	$max = sizeof($messages);

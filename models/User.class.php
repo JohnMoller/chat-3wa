@@ -3,6 +3,7 @@ class User
 {
 	private $id;
 	private $login;
+	private $mail;
 	private $password;
 	private $last_connexion;
 
@@ -19,6 +20,10 @@ class User
 	public function getLogin()
 	{
 		return $this->login;
+	}
+	public function getMail()
+	{
+		return $this->mail;
 	}
 
 	public function getPassword()
@@ -45,6 +50,14 @@ class User
 		else if (strlen($login) > 15)
 			throw new Exception ("Login trop long (> 15)");
 		$this->login = $login;
+	}
+	public function setMail($mail)
+	{
+		if (strlen($mail) < 10)
+			throw new Exception ("email trop court (< 10)");
+		else if (strlen($mail) > 64)
+			throw new Exception ("email trop long (> 64)");
+		$this->mail = $mail;
 	}
 
 	public function setPassword($password)
