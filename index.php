@@ -33,7 +33,7 @@ if (isset($access_traitement[$page]))
 
 if (isset($_GET['ajax']))
 {
-	$accessAjax = ['liste_messages'];
+	$accessAjax = ['liste_messages', 'liste_users_online'];
 	if (isset($_GET['page']))
 	{
 		if (in_array($_GET['page'], $accessAjax))

@@ -7,7 +7,7 @@ if (isset($_SESSION['id']))
 			try
 			{
 				$message = $manager->create($_POST);
-				header('Location: index.php?page=index');
+				header('Location: home');
 				exit;
 			}
 			catch (Exception $exception)

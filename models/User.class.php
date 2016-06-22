@@ -4,6 +4,7 @@ class User
 	private $id;
 	private $login;
 	private $password;
+	private $last_connexion;
 
 	public function __construct($link)
 	{
@@ -23,6 +24,11 @@ class User
 	public function getPassword()
 	{
 		return $this->password;
+	}
+
+	public function getLastConnexion()
+	{
+		return $this->last_connexion;
 	}
 
 	public function verifyPassword($password)
@@ -49,6 +55,12 @@ class User
 			throw new Exception ("Mot de passe trop long (> 255)");
 		$password = password_hash($password, PASSWORD_BCRYPT, array("cost"=>8));
 		$this->password = $password;
+	}
+
+	public function setLastConnexion($password)
+	{
+		$last_connexion = time();
+		$this->last_connexion = $last_connexion;
 	}
 }
 ?>

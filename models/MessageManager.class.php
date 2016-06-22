@@ -18,6 +18,17 @@ class MessageManager
 		return $list;
 	}
 
+	public function findByCategory(Category $category)
+	{
+		$list = [];
+		$id_category = $category->getId();
+		$request = "SELECT * FROM message WHERE id_category=".$id_category;
+		$res = mysqli_query($this->link, $request);
+		while ($message = mysqli_fetch_object($res, "Message", [$this->link]))
+			$list[] = $message;
+		return $list;
+	}
+
 
 
 	public function create($data)

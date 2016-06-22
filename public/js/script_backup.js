@@ -13,6 +13,5 @@ $('document').ready(function()
 	setInterval(function()
 	{
 		$('#liste_messages').load('index.php?page=liste_messages&ajax');
-		$('#liste_online_users').load('index.php?page=liste_users_online&ajax');
 	}, 1000);
 });

@@ -104,6 +104,30 @@ class UserManager
 			throw new Exception("User not found");
 	}
 
+	public function update_connexion($user)
+	{
+		$id = $user->getId();
+		if ($id)
+		{
+			$request = "UPDATE user SET last_connexion=CURRENT_TIMESTAMP WHERE id = '".$id."' LIMIT 1";			
+			$res = mysqli_query($this->link, $request);
+			if ($res)
+				return $this->findById($id);
+			else
+				throw new Exception ("Internal server error");
+		}
+	}
+
+	public function online()
+	{
+		$list = [];
+		$request = "SELECT * FROM user WHERE last_connexion > CURRENT_TIMESTAMP - 20";
+		$res = mysqli_query($this->link, $request);
+		while ($user = mysqli_fetch_object($res, "User", [$this->link]))
+			$list[] = $user;
+		return $list;
+	}
+
 	
 }
 ?>

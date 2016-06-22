@@ -1,18 +1,23 @@
 <?php
-$manager = new MessageManager($link);
-
-$messages = $manager->findAll();
-$count = 0;
-
-$max = sizeof($messages);
-
-while ($count < $max)
+if (isset($_GET['id']))
 {
-	$message = $messages[$count];
-	$user = $message->getUser($message->getIdUser());
-	require('views/message_fiche.phtml');
+	$id = $_GET['id'];
+	$manager = new CategoryManager($link);
+	$category = $manager->findById($id);
 
-	$count++;
+	$messages = $category->getMessages();
+
+	$count = 0;
+	$max = sizeof($messages);
+
+	while ($count < $max)
+	{
+		$message = $messages[$count];
+		$user = $message->getUser($message->getIdUser());
+		require('views/message_fiche.phtml');
+
+		$count++;
+	}
 }
 
 ?>
