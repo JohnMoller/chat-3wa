@@ -9,3 +9,9 @@
 main {
   overflow: hidden;
 }
+
+.message:nth-child(odd) {
+background-color: grey;
+color: #FFF;
+}
+
